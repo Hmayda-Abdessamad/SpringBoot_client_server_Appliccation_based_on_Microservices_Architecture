@@ -2,6 +2,7 @@ package com.example.finalproject.service;
 
 import com.example.finalproject.Beans.Admin;
 import com.example.finalproject.Beans.Client;
+import com.example.finalproject.Beans.Consommateur;
 import com.example.finalproject.Beans.User;
 import com.example.finalproject.controllers.AddResponse;
 import com.example.finalproject.repositories.UserRepo;
@@ -40,6 +41,12 @@ public class UserService {
         client.setId(getMaxId());
         userRepo.save(client);
         return client;
+    }
+
+    public Consommateur addConsommateur(Consommateur consommateur){
+        consommateur.setId(getMaxId());
+        userRepo.save(consommateur);
+        return consommateur;
     }
 
     public Admin addAdmin(Admin admin){

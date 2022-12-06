@@ -2,6 +2,7 @@ package com.example.finalproject.controllers;
 
 import com.example.finalproject.Beans.Admin;
 import com.example.finalproject.Beans.Client;
+import com.example.finalproject.Beans.Consommateur;
 import com.example.finalproject.Beans.User;
 import com.example.finalproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,12 @@ public class UserController {
     public Client addClient(@RequestBody Client client){
         return userService.addClient(client);
     }
+
+    @PostMapping("/addConsommateur")
+    public Consommateur addClient(@RequestBody Consommateur consommateur){
+        return userService.addConsommateur(consommateur);
+    }
+
 
     @PostMapping("/addAdmin")
     public Admin addAdimn(@RequestBody Admin admin){
