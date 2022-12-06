@@ -1,5 +1,7 @@
 package com.example.finalproject.controllers;
 
+import com.example.finalproject.Beans.Admin;
+import com.example.finalproject.Beans.Client;
 import com.example.finalproject.Beans.User;
 import com.example.finalproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+
 
     @GetMapping("/getUsers")
     public List<User> getUsers(){
@@ -44,9 +48,14 @@ public class UserController {
         }
     }
 
-    @PostMapping("/addUser")
-    public User addUser(@RequestBody User user){
-        return userService.addUser(user);
+    @PostMapping("/addClient")
+    public Client addClient(@RequestBody Client client){
+        return userService.addClient(client);
+    }
+
+    @PostMapping("/addAdmin")
+    public Admin addAdimn(@RequestBody Admin admin){
+        return userService.addAdmin(admin);
     }
 
     @PutMapping("/updateUser/{id}")

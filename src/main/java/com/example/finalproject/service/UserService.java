@@ -1,5 +1,7 @@
 package com.example.finalproject.service;
 
+import com.example.finalproject.Beans.Admin;
+import com.example.finalproject.Beans.Client;
 import com.example.finalproject.Beans.User;
 import com.example.finalproject.controllers.AddResponse;
 import com.example.finalproject.repositories.UserRepo;
@@ -34,11 +36,19 @@ public class UserService {
         }
         return user;
     }
-    public User addUser(User user){
-        user.setId(getMaxId());
-        userRepo.save(user);
-        return user;
+    public Client addClient(Client client){
+        client.setId(getMaxId());
+        userRepo.save(client);
+        return client;
     }
+
+    public Admin addAdmin(Admin admin){
+        admin.setId(getMaxId());
+        userRepo.save(admin);
+        return admin;
+    }
+
+
     public int getMaxId(){
         System.out.println(userRepo.findAll().size()+1);
         return userRepo.findAll().size()+1;
